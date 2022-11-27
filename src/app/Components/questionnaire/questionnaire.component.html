@@ -1,0 +1,18 @@
+<div *ngIf="questionnaire$ | async as questionnaire" class="container">
+    <form (ngSubmit)="onSubmit(questionnaire.form)" [formGroup]="questionnaire.form">
+  
+      <div class="questionnaire-block header">
+        <h1>{{questionnaire.title}}</h1>
+        <p class="subtitle">{{questionnaire.subtitle}}</p>
+        <p class="required">* Required</p>
+      </div>
+
+      <div *ngFor="let question of questionnaire.questions">
+        <app-dynamic-question [question]="question" [form]="questionnaire.form"></app-dynamic-question>
+      </div>
+  
+      <div>
+        <button mat-raised-button type="submit" [disabled]="!questionnaire.form.valid">Save</button>
+      </div>
+    </form>
+  </div>

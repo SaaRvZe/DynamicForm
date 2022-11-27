@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgb(254, 234, 248);
+    padding: 10px 20px;
+
+}
+
+
+.questionnaire-block {
+    border-radius: 5px;
+    border: grey solid 1px;
+    margin: 15px 0;
+    background-color: white;
+    padding: 10px;
+}
+
+.required {
+    color: red;
+}

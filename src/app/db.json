@@ -1,0 +1,77 @@
+{
+  "questionnaires": [
+    {
+    "id": 1,
+    "title": "GoTech Questionnaire",
+    "subtitle": "Show me what you got!",
+    "questions": [
+      {
+        "id" : 1,
+        "order" : 1,
+        "required": true,
+        "key": "favLang",
+        "label": "What language is your faviorate?",
+        "type": "radio",
+        "controlType": 2,
+        "options": [
+          {"key": "Javascript", "value": "Javascript"},
+          {"key": "Java", "value": "Java"},
+          {"key": "Typescript", "value": "Typescript"}
+        ],
+        "conditionalToQ": {"qId": 4, "requiredValue": "Typescript"}
+      },
+      {
+        "id" : 3,
+        "order" : 4,
+        "required": true,
+        "key": "howWas",
+        "label": "How was the assignment",
+        "type": "radio",
+        "controlType": 2,
+        "options": [
+          {"key": "Easy", "value": "easy"},
+          {"key": "Normal", "value": "normal"},
+          {"key": "Hard", "value": "hard"},
+          {"key": "Other", "value": "other", "custom": true}
+        ]
+      },
+      {
+        "id" : 4,
+        "order" : 2,
+        "required": true,
+        "key": "why",
+        "label": "Why do you like TypeScript?",
+        "type": "text",
+        "controlType": 1,
+        "conditional" : true
+      },
+      {
+        "id" : 2,
+        "order" : 3,
+        "required": false,
+        "key": "like",
+        "label": "What you like about programing",
+        "type": "text",
+        "controlType": 1
+      }
+    ]
+   }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

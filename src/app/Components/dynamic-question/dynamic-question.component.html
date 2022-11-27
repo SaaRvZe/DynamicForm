@@ -1,0 +1,20 @@
+<div [formGroup]="form" [ngSwitch]="question.controlType" [ngClass]="form.controls[question.key].disabled ? 'disabled' : ''" class="questionnaire-block">
+  <h3>{{question.label}} <span *ngIf="question.required" class="required">*</span></h3>
+  <mat-form-field *ngSwitchCase="eQuestionType.Free">
+    <mat-label >Your answer</mat-label>
+    <input matInput  [formControlName]="question.key"
+          [id]="question.key" [type]="question.type">
+    <mat-error *ngIf="!form.controls[this.question.key]?.valid">required</mat-error>
+  </mat-form-field>
+
+  <mat-radio-group aria-label="Select an option" class="radio-group" [id]="question.key" *ngSwitchCase="eQuestionType.MultipleChoice" [formControlName]="question.key">
+    <mat-radio-button *ngFor="let opt of question.options" [value]="opt.value">
+      {{opt.key}}
+    
+    	<mat-form-field *ngIf="opt.custom">
+        <input matInput [formControlName]="question.key + 'Custom'" >
+      </mat-form-field>
+    </mat-radio-button>
+  </mat-radio-group>
+
+</div>
